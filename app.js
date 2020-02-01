@@ -41,10 +41,10 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-console.log(process.env.DATABASEURL);
+//console.log(process.env.DATABASEURL);
 //MONGOOSE -- Connect to database
-mongoose.connect(process.env.DATABASEURL, {
-//mongoose.connect("mongodb://localhost:27017/yelp_camp_v12", {
+//mongoose.connect(process.env.DATABASEURL, {
+mongoose.connect("mongodb://localhost:27017/yelp_camp_v12", {
 //mongoose.connect("mongodb://yelpcamp:yelpcamppassword@cluster0-shard-00-00-mjmlj.mongodb.net:27017,cluster0-shard-00-01-mjmlj.mongodb.net:27017,cluster0-shard-00-02-mjmlj.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority", {
     useNewUrlParser: true,
     useCreateIndex: true
@@ -101,11 +101,11 @@ app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
 
-app.listen(process.env.PORT, process.env.IP, function() {
-    console.log("Server started!");
+//app.listen(process.env.PORT, process.env.IP, function() {
+//    console.log("Server started!");
+//});
+
+
+app.listen(3000, function() {
+     console.log("Server started!");
 });
-
-
-// app.listen(3000, function() {
-//     console.log("Server started!");
-// });
